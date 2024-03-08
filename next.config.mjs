@@ -6,6 +6,11 @@ const nextConfig = {
                     protocol: 'https',
                     hostname: 'cdn.myanimelist.net',
                     pathname: '/images/**',          
+            },
+            {
+                    protocol: 'https',
+                    hostname: 's4.anilist.co',
+                    pathname: '**',          
             }
         ],
         domains:['*']
