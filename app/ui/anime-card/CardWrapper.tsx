@@ -63,7 +63,7 @@ const AnimeCard: React.FC<AnimeCardProps> = ({ item }) => {
             alt="Banner of Anime"
           />
           <div
-            className={`m-3 py-1 px-3 text-[14px] font-bold bg-[rgb(6,193,73)] rounded-sm absolute top-0`}
+            className={`m-3 py-1 px-3 text-[14px] font-bold bg-[rgb(6,193,73)] text-white rounded-sm absolute top-0`}
           >
             {item.rating / 10 || 0}
           </div>
@@ -95,8 +95,8 @@ const AnimeCardNotRealesed: React.FC<AnimeCardProps> = ({ item }) => {
               }`}
               style={{ backgroundImage: `url(${item.cover || item.image})` }}
             ></div>
-            <div className="absolute top-2  p-3 sm:p-6 flex gap-y-3 h-full justify-center flex-col  font-bold to-transparent">
-              <h4 className="line-clamp-1 saturate-50 text-white text-2xl">
+            <div className="absolute top-2 w-full p-3 sm:p-6 flex gap-y-3 h-full justify-center flex-col  font-bold to-transparent">
+              <h4 className={`line-clamp-1  saturate-50 text-white text-2xl ${!item.cover && 'w-[80%]' }`}>
                 {item.title.userPreferred}
               </h4>
               <div

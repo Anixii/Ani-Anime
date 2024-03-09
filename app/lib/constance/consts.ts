@@ -1,18 +1,23 @@
+import { HomeIcon,ShellIcon, BookAIcon,CalendarDaysIcon } from "lucide-react";
 export const headerNav = [
     {
       display: "Home",
-      path: "/",
+      path: "/", 
+      icon: HomeIcon
     },
     {
-      display: "Movies",
+      display: "Anime",
       path: "/movie",
+      icon: ShellIcon,
     },
     {
-      display: "TV",
+      display: "Manga",
       path: "/tv",
-    }, 
+      icon: BookAIcon
+    },
     {
-      display: 'Actors',
-      path: '/person'
-    }
+      display: "Realese",
+      path: "/reaslese",
+      icon: CalendarDaysIcon
+    },  
   ];
