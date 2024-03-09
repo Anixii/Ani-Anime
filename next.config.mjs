@@ -13,7 +13,7 @@ const nextConfig = {
                     pathname: '**',          
             }
         ],
-        domains:['*']
+        // domains:['*']
     }
 };
 

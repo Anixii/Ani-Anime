@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { animeApi } from "../lib/api/anime";
 import Header from "../ui/header/Header";
@@ -6,31 +5,213 @@ import HeroSection from "../ui/HeroSections/HeroSection";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import CardWrapper from "../ui/anime-card/CardWrapper";
+import { Suspense } from "react";
 
 export default async function Home() {
-  // const data = await animeApi.getTopAnime()  
+  // const data = await animeApi.getTopAnime()
   // console.log(data);
-  
-  
-  return (
-    <> 
-      <main  className="min-h-screen">
-        <HeroSection/> 
-        
-        <div className="flex flex-col gap-y-24  px-4 xl:px-20 2xl:px-28 py-11"> 
-          <article className="w-full "> 
-            <div className="flex justify-between items-center mb-5 "><h3 className="text-2xl  font-bold">Top Hits Anime</h3> <Link href={'/'}><Button variant={'secondary'} className="font-medium text-[rgb(6,193,73)]">See all</Button></Link></div>
-            <CardWrapper params={{perPage: 30}}/> 
-          </article>
-          <article className="w-full "> 
-            <div className="flex justify-between items-center mb-5 "><h3 className="text-2xl  font-bold">Top Hits Anime</h3> <Link href={'/'}><Button variant={'secondary'} className="font-medium text-[rgb(6,193,73)]">See all</Button></Link></div>
-            <CardWrapper params={{perPage: 30}}/> 
-          </article>
-          <article className="w-full "> 
-            <div className="flex justify-between items-center mb-5 "><h3 className="text-2xl  font-bold">Top Hits Anime</h3> <Link href={'/'}><Button variant={'secondary'} className="font-medium text-[rgb(6,193,73)]">See all</Button></Link></div>
-            <CardWrapper params={{perPage: 30}}/> 
-          </article>
 
+  return (
+    <>
+      <main className="min-h-screen">
+        <HeroSection />
+        <div className="flex flex-col gap-y-24  px-4 xl:px-20 2xl:px-28 py-11">
+          <article className="w-full ">
+            <div className="flex justify-between items-center mb-5 ">
+              <h3 className="text-2xl  font-bold">Top Hit Anime</h3>{" "}
+              <Link href={"/"}>
+                <Button
+                  variant={"secondary"}
+                  className="font-medium text-[rgb(6,193,73)]"
+                >
+                  See all
+                </Button>
+              </Link>
+            </div>
+            <Suspense fallback={<h1>Loading</h1>}>
+              <CardWrapper params={{ sort: ["TRENDING_DESC"], perPage: 30 }} />
+            </Suspense>
+          </article>
+          <article className="w-full ">
+            <div className="flex justify-between items-center mb-5 ">
+              <h3 className="text-2xl  font-bold">Most Popular Anime</h3>{" "}
+              <Link href={"/"}>
+                <Button
+                  variant={"secondary"}
+                  className="font-medium text-[rgb(6,193,73)]"
+                >
+                  See all
+                </Button>
+              </Link>
+            </div>
+            <Suspense fallback={<h1>Loading</h1>}>
+              <CardWrapper
+                params={{ sort: ["POPULARITY_DESC"], perPage: 30 }}
+              />
+            </Suspense>
+          </article>
+          <article className="w-full ">
+            <div className="flex justify-between items-center mb-5 ">
+              <h3 className="text-2xl  font-bold">Most Scored Anime</h3>{" "}
+              <Link href={"/"}>
+                <Button
+                  variant={"secondary"}
+                  className="font-medium text-[rgb(6,193,73)]"
+                >
+                  See all
+                </Button>
+              </Link>
+            </div>
+            <Suspense fallback={<h1>Loading</h1>}>
+              <CardWrapper params={{ sort: ["SCORE_DESC"], perPage: 30 }} />
+            </Suspense>
+          </article>
+          <article className="w-full ">
+            <div className="flex justify-between items-center mb-5 ">
+              <h3 className="text-2xl  font-bold">Most Liked Anime</h3>{" "}
+              <Link href={"/"}>
+                <Button
+                  variant={"secondary"}
+                  className="font-medium text-[rgb(6,193,73)]"
+                >
+                  See all
+                </Button>
+              </Link>
+            </div>
+            <Suspense fallback={<h1>Loading</h1>}>
+              <CardWrapper
+                params={{ sort: ["FAVOURITES_DESC"], perPage: 30 }}
+              />
+            </Suspense>
+          </article>
+          <article className="w-full ">
+            <div className="flex justify-between items-center mb-5 ">
+              <h3 className="text-2xl  font-bold">Not RealesedAnime</h3>{" "}
+              <Link href={"/"}>
+                <Button
+                  variant={"secondary"}
+                  className="font-medium text-[rgb(6,193,73)]"
+                >
+                  See all
+                </Button>
+              </Link>
+            </div>
+            <Suspense fallback={<h1>Loading</h1>}>
+              <CardWrapper 
+              reales={true}
+                params={{
+                  sort: ["POPULARITY_DESC"],
+                  status: "NOT_YET_RELEASED",
+                  perPage: 30,
+                }}
+              />
+            </Suspense>
+          </article>
+          <h2 className="text-center font-bold text-3xl">MANGA:</h2>
+          <article className="w-full ">
+            <div className="flex justify-between items-center mb-5 ">
+              <h3 className="text-2xl  font-bold">Top Hit Manga</h3>{" "}
+              <Link href={"/"}>
+                <Button
+                  variant={"secondary"}
+                  className="font-medium text-[rgb(6,193,73)]"
+                >
+                  See all
+                </Button>
+              </Link>
+            </div>
+            <Suspense fallback={<h1>Loading</h1>}>
+              <CardWrapper
+                params={{ sort: ["TRENDING_DESC"], type: "MANGA", perPage: 30 }}
+              />
+            </Suspense>
+          </article>
+          <article className="w-full ">
+            <div className="flex justify-between items-center mb-5 ">
+              <h3 className="text-2xl  font-bold">Most Popular Manga</h3>{" "}
+              <Link href={"/"}>
+                <Button
+                  variant={"secondary"}
+                  className="font-medium text-[rgb(6,193,73)]"
+                >
+                  See all
+                </Button>
+              </Link>
+            </div>
+            <Suspense fallback={<h1>Loading</h1>}>
+              <CardWrapper
+                params={{
+                  sort: ["POPULARITY_DESC"],
+                  perPage: 30,
+                  type: "MANGA",
+                }}
+              />
+            </Suspense>
+          </article>
+          <article className="w-full ">
+            <div className="flex justify-between items-center mb-5 ">
+              <h3 className="text-2xl  font-bold">Most Scored Manga</h3>{" "}
+              <Link href={"/"}>
+                <Button
+                  variant={"secondary"}
+                  className="font-medium text-[rgb(6,193,73)]"
+                >
+                  See all
+                </Button>
+              </Link>
+            </div>
+            <Suspense fallback={<h1>Loading</h1>}>
+              <CardWrapper
+                params={{ sort: ["SCORE_DESC"], perPage: 30, type: "MANGA" }}
+              />
+            </Suspense>
+          </article>
+          <article className="w-full ">
+            <div className="flex justify-between items-center mb-5 ">
+              <h3 className="text-2xl  font-bold">Most Liked Manga</h3>{" "}
+              <Link href={"/"}>
+                <Button
+                  variant={"secondary"}
+                  className="font-medium text-[rgb(6,193,73)]"
+                >
+                  See all
+                </Button>
+              </Link>
+            </div>
+            <Suspense fallback={<h1>Loading</h1>}>
+              <CardWrapper
+                params={{
+                  sort: ["FAVOURITES_DESC"],
+                  perPage: 30,
+                  type: "MANGA",
+                }}
+              />
+            </Suspense>
+          </article> 
+          <article className="w-full ">
+            <div className="flex justify-between items-center mb-5 ">
+              <h3 className="text-2xl  font-bold">Not RealesedAnime</h3>{" "}
+              <Link href={"/"}>
+                <Button
+                  variant={"secondary"}
+                  className="font-medium text-[rgb(6,193,73)]"
+                >
+                  See all
+                </Button>
+              </Link>
+            </div>
+            <Suspense fallback={<h1>Loading</h1>}>
+              <CardWrapper 
+              reales={true}
+                params={{
+                  sort: ["POPULARITY_DESC"], 
+                  type:'MANGA',
+                  status: "NOT_YET_RELEASED",
+                  perPage: 30,
+                }}
+              />
+            </Suspense>
+          </article>
         </div>
       </main>
     </>

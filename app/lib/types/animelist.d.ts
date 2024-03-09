@@ -4,7 +4,7 @@ export type PopularAndTrending = {
     hasNextPage: boolean
     results: Array<PopularAndTrendingResult>
     }
-type PopularAndTrendingResult = {
+export type PopularAndTrendingResult = {
         id: string,
         malId:number
         title: {

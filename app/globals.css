@@ -75,10 +75,20 @@
     @apply bg-background text-foreground;
   }
 } 
+.header.shrink{
+  background-color: #0f0f0f;
+}
 .hero__section{  
   height: 100%;
   background-image: url('https://ik.imagekit.io/subanime/jujutsukaisenPoster2'); 
   background-position: center; 
   background-size: cover; 
   background-repeat: no-repeat; 
+} 
+.image__bg { 
+  background-position: center; 
+  background-size: cover; 
+  background-repeat: no-repeat;  
+  height: 100%;
+
 }

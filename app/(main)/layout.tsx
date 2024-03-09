@@ -16,8 +16,10 @@ export default function RootLayout({
 }>) {
   return (
    <>  
-    <Header/>
+    <Header/> 
+    <div className="mb-20">
     {children}
+    </div>
    </>
   );
 }

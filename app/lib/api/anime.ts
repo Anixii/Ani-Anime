@@ -1,6 +1,6 @@
 
 import queryString from 'query-string'
-import { PopularAndTrendingParams, TopAnimeParams, allAnimeParams } from './api'
+import { AdvancedSearchParams, PopularAndTrendingParams, TopAnimeParams, allAnimeParams } from './api'
 export const animeApi = {  
     async getAllAnime(params?: allAnimeParams) { 
         const urlParams = '?' + queryString.stringify(params || {}) 
@@ -30,7 +30,27 @@ export const animeApi = {
     },
     async getPopularAnime(params?:PopularAndTrendingParams) { 
         const urlParams = '?' + queryString.stringify(params || {}) 
-        const anime = await fetch(`https://api.consumet.org/meta/anilist/popular${urlParams}`, {cache:'force-cache',next:{revalidate: 82000}},) 
+        const anime = await fetch(`https://march-api1.vercel.app/meta/anilist/popular${urlParams}`, {next:{revalidate: 82000}},) 
+        if(!anime.ok){ 
+            throw Error
+        }   
+        return await anime.json()
+    },
+    async getAdvancedSearchAnime(params?:AdvancedSearchParams) { 
+        let queryStringParams = '';
+        if (params) {
+            const { sort,genres,format,...restParams } = params;
+            const formattedSort = sort ? `sort=${JSON.stringify(sort)}` : '';
+            const formattedgenres = genres ? `genres=${JSON.stringify(genres)}` : '';
+
+            const formattedformat = format ? `format=${JSON.stringify(format)}` : '';
+            const formattedRestParams = queryString.stringify(restParams, { arrayFormat: 'comma' });
+            queryStringParams = '?' + [formattedSort,formattedgenres,formattedformat,formattedRestParams].filter(Boolean).join('&');
+        }; 
+        console.log(queryStringParams);
+        
+           
+        const anime = await fetch(`https://march-api1.vercel.app/meta/anilist/advanced-search${queryStringParams}`, {next:{revalidate: 82000}},) 
         if(!anime.ok){ 
             throw Error
         }   
