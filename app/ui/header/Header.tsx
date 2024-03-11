@@ -6,7 +6,7 @@ import { ModeToggle } from '../theme-provider/ToggleButton'
 const Header = () => {
   return ( 
     <> 
-    <header className='hover:bg-[#0f0f0f] backdrop-blur-lg backdrop-brightness-75 shadow-xl	 header transition-all duration-500 ease-out trans h-16 fixed top-0 left-0 z-50 w-full sm:h-24'>
+    <header className='backdrop-blur-lg backdrop-brightness-75 	 header transition-all duration-500 ease-out trans h-16 fixed top-0 left-0 z-50 w-full sm:h-24'>
       <div className='flex h-full px-8 justify-center  items-center sm:justify-between'>
         <div>
           <Link className='text-white text-4xl font-bold' href={"/"}>AniAnime</Link>

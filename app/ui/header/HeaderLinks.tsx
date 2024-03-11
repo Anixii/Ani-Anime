@@ -17,7 +17,7 @@ const HeaderLinks = () => {
           key={index}
         >
           <Link className={`no-underline flex flex-col items-center ${router === item.path ? "text-[rgb(6,193,73)]" : ""} `} href={item.path}> 
-            <item.icon className="block sm:hidden" />
+            <item.icon size={'19px'} className="block sm:hidden" />
             {item.display}
           </Link>
         </li>

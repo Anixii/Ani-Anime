@@ -1,22 +1,16 @@
-import Image from "next/image";
-import { animeApi } from "../lib/api/anime";
-import Header from "../ui/header/Header";
 import HeroSection from "../ui/HeroSections/HeroSection";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import CardWrapper from "../ui/anime-card/CardWrapper";
 import { Suspense } from "react";
+import { CardListSkeleton, CardSkeleton,  } from "../ui/sekeletons/Sekelonts";
 
 export default async function Home() {
-  const data = await animeApi.getTopAnime()
-  // console.log(data);
-
   return (
     <>
       <main className="min-h-screen">
         <HeroSection />
-        <div className="flex flex-col gap-y-24  px-4 xl:px-20 2xl:px-28 py-11">
-          
+        <div className="flex flex-col gap-y-24  px-4 xl:px-20 2xl:px-28 py-11"> 
           <article className="w-full ">
             <div className="flex justify-between items-center mb-5 ">
               <h3 className="text-2xl  font-bold">Top Hit Anime</h3>{" "}
@@ -29,7 +23,7 @@ export default async function Home() {
                 </Button>
               </Link>
             </div>
-            <Suspense fallback={<h1>Loading</h1>}>
+            <Suspense fallback={<CardListSkeleton/> }> 
               <CardWrapper params={{ sort: ["TRENDING_DESC"], perPage: 30 }} />
             </Suspense>
           </article>
@@ -46,7 +40,7 @@ export default async function Home() {
                 </Button>
               </Link>
             </div>
-            <Suspense fallback={<h1>Loading</h1>}>
+            <Suspense fallback={<CardListSkeleton/>}>
               <CardWrapper
                 params={{ sort: ["POPULARITY_DESC"], perPage: 30 }}
               />
@@ -65,7 +59,7 @@ export default async function Home() {
                 </Button>
               </Link>
             </div>
-            <Suspense fallback={<h1>Loading</h1>}>
+            <Suspense fallback={<CardListSkeleton/>}>
               <CardWrapper params={{ sort: ["SCORE_DESC"], perPage: 30 }} />
             </Suspense>
           </article>
@@ -82,7 +76,7 @@ export default async function Home() {
                 </Button>
               </Link>
             </div>
-            <Suspense fallback={<h1>Loading</h1>}>
+            <Suspense fallback={<CardListSkeleton/>}>
               <CardWrapper
                 params={{ sort: ["FAVOURITES_DESC"], perPage: 30 }}
               />
@@ -101,7 +95,7 @@ export default async function Home() {
                 </Button>
               </Link>
             </div>
-            <Suspense fallback={<h1>Loading</h1>}>
+            <Suspense fallback={<CardListSkeleton/>}>
               <CardWrapper 
               reales={true}
                 params={{
@@ -127,7 +121,7 @@ export default async function Home() {
                 </Button>
               </Link>
             </div>
-            <Suspense fallback={<h1>Loading</h1>}>
+            <Suspense fallback={<CardListSkeleton/>}>
               <CardWrapper
                 params={{ sort: ["TRENDING_DESC"], type: "MANGA", perPage: 30 }}
               />
@@ -146,7 +140,7 @@ export default async function Home() {
                 </Button>
               </Link>
             </div>
-            <Suspense fallback={<h1>Loading</h1>}>
+            <Suspense fallback={<CardListSkeleton/>}>
               <CardWrapper
                 params={{
                   sort: ["POPULARITY_DESC"],
@@ -169,7 +163,7 @@ export default async function Home() {
                 </Button>
               </Link>
             </div>
-            <Suspense fallback={<h1>Loading</h1>}>
+            <Suspense fallback={<CardListSkeleton/>}>
               <CardWrapper
                 params={{ sort: ["SCORE_DESC"], perPage: 30, type: "MANGA" }}
               />
@@ -188,7 +182,7 @@ export default async function Home() {
                 </Button>
               </Link>
             </div>
-            <Suspense fallback={<h1>Loading</h1>}>
+            <Suspense fallback={<CardListSkeleton/>}>
               <CardWrapper
                 params={{
                   sort: ["FAVOURITES_DESC"],
@@ -211,7 +205,7 @@ export default async function Home() {
                 </Button>
               </Link>
             </div>
-            <Suspense fallback={<h1>Loading</h1>}>
+            <Suspense fallback={<CardListSkeleton/>}>
               <CardWrapper 
               reales={true}
                 params={{

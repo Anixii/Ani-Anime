@@ -13,7 +13,8 @@ const config = {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
+      screens: { 
+        'big-tablet': '980px',
         "2xl": "1400px",
       },
     },

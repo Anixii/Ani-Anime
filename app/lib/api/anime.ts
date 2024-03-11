@@ -21,8 +21,6 @@ export const animeApi = {
     async getTrandingAnime(params?:PopularAndTrendingParams) { 
         const urlParams = '?' + queryString.stringify(params || {}) 
         const anime = await fetch(`https://march-api1.vercel.app/meta/anilist/trending${urlParams}`, {next:{revalidate: 82000}},) 
-        console.log(anime);
-        
         if(!anime.ok){ 
             throw Error('error in getTranding Anime')
         }   
@@ -47,9 +45,7 @@ export const animeApi = {
             const formattedRestParams = queryString.stringify(restParams, { arrayFormat: 'comma' });
             queryStringParams = '?' + [formattedSort,formattedgenres,formattedformat,formattedRestParams].filter(Boolean).join('&');
         }; 
-        console.log(queryStringParams);
         
-           
         const anime = await fetch(`https://march-api1.vercel.app/meta/anilist/advanced-search${queryStringParams}`, {next:{revalidate: 82000}},) 
         if(!anime.ok){ 
             throw Error

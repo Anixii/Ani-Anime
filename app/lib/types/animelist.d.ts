@@ -3,7 +3,8 @@ export type PopularAndTrending = {
     currentPage: 1, 
     hasNextPage: boolean
     results: Array<PopularAndTrendingResult>
-    }
+    } 
+
 export type PopularAndTrendingResult = {
         id: string,
         malId:number

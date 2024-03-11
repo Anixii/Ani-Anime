@@ -28,12 +28,12 @@ const AnimeCard: React.FC<AnimeCardProps> = ({ item }) => {
           {item.rating / 10 || 0}
         </div>
         <div className="absolute bottom-0 p-2 rounded-xl to-transparent from-black bg-gradient-to-t  text-white">
-          <div className="text-[14px] font-semibold line-clamp-1">
+          <h5 className="text-[15px] font-semibold line-clamp-1">
             {item.title.userPreferred}
-          </div>
-          <div className="text-[14px] font-normal line-clamp-1">
+          </h5>
+          <h5 className="text-[15px] font-normal line-clamp-1">
             {item.description}
-          </div>
+          </h5>
         </div>
       </Link>
     </CarouselItem>
