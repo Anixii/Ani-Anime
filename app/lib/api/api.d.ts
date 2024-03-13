@@ -29,9 +29,7 @@ export type AdvancedSearchParams = {
   page?: number;
   perPage?: number;
   season?: "WINTER" | "SPRING" | "SUMMER" | "FALL";
-  format?: Array<
-    "TV" | "TV_SHORT" | "OVA" | "ONA" | "MOVIE" | "SPECIAL" | "MUSIC"
-  >;
+  format?: "TV" | "TV_SHORT" | "OVA" | "ONA" | "MOVIE" | "SPECIAL" | "MUSIC";
   sort?: Array<SortOption>;
   genres?: Array<
     | "Action"

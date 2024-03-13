@@ -1,31 +1,33 @@
-import * as React from "react" 
-import { Button } from "@/components/ui/button"
+import * as React from "react";
+import { Button } from "@/components/ui/button";
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer"
-import CatalogSidebar from "./CatalogSidebar"
+} from "@/components/ui/drawer";
+import CatalogSidebar from "./CatalogSidebar";
+import { FilterIcon } from "lucide-react";
 
- 
 export function DrawerDemo() {
-
- 
   return (
-    <Drawer>
+    <Drawer closeThreshold={3}>
       <DrawerTrigger asChild>
-        <Button variant="outline">Open Drawer</Button>
+        <Button
+          variant="default"
+          className="w-full flex items-center gap-x-1 font-bold text-[16px]"
+        >
+          <FilterIcon /> Open Drawer
+        </Button>
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full">
-            <CatalogSidebar/>
+          <CatalogSidebar />
         </div>
+      <DrawerClose asChild>
+        <Button variant="secondary">Cancel</Button>
+      </DrawerClose>
       </DrawerContent>
     </Drawer>
-  )
+  );
 }

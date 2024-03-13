@@ -74,7 +74,8 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground; 
+    scroll-behavior: smooth;
   } 
   .my-react-select-container .my-react-select__control {
     @apply bg-white dark:bg-neutral-950 border-2 border-neutral-300 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-500;

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import CardWrapper from "../ui/anime-card/CardWrapper";
 import { Suspense } from "react";
-import { CardListSkeleton, CardSkeleton,  } from "../ui/sekeletons/Sekelonts";
+import { CardListSkeleton,  } from "../ui/sekeletons/Sekelonts";
 
 export default async function Home() {
   return (

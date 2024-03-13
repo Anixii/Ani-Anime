@@ -7,7 +7,6 @@ import React from "react";
 
 const HeaderLinks = () => { 
     const router = usePathname(); 
-    console.log(router);
     
   return (
     <>

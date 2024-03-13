@@ -36,20 +36,28 @@ export const animeApi = {
     },
     async getAdvancedSearchAnime(params?:AdvancedSearchParams) { 
         let queryStringParams = '';
-        if (params) {
-            const { sort,genres,format,...restParams } = params;
-            const formattedSort = sort ? `sort=${JSON.stringify(sort)}` : '';
-            const formattedgenres = genres ? `genres=${JSON.stringify(genres)}` : '';
-
-            const formattedformat = format ? `format=${JSON.stringify(format)}` : '';
+        if (params) { 
+            const { sort,genres,...restParams } = params;
+            const formattedSort = sort ? `sort=${JSON.stringify(sort)}` : ''; 
+            let formattedGenres
+            if(genres?.length !== 0) { 
+                formattedGenres = genres ? `genres=${JSON.stringify(genres)}` : '';
+            } else{ 
+                formattedGenres = undefined
+            }
+            // const formattedgenres = genres ? `genres=${JSON.stringify(genres)}` : '';
             const formattedRestParams = queryString.stringify(restParams, { arrayFormat: 'comma' });
-            queryStringParams = '?' + [formattedSort,formattedgenres,formattedformat,formattedRestParams].filter(Boolean).join('&');
+            queryStringParams = '?' + [formattedSort,formattedGenres,formattedRestParams].filter(Boolean).join('&');
         }; 
+        console.log(params);
         
         const anime = await fetch(`https://march-api1.vercel.app/meta/anilist/advanced-search${queryStringParams}`, {next:{revalidate: 82000}},) 
         if(!anime.ok){ 
+            console.log("error");
+            
             throw Error
-        }   
+        }    
+        
         return await anime.json()
     },
 

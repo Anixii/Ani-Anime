@@ -19,7 +19,7 @@ export const headerNav = [
 
 export const CatalogGenreSelect =  [
     { value: 'Action', label: 'Action' },
-    { value: 'Aventure', label: 'Aventure' },
+    { value: 'Adventure', label: 'Adventure' },
     { value: 'Cars', label: 'Cars' },
     { value: 'Comedy', label: 'Comedy' },
     { value: 'Drama', label: 'Drama' },

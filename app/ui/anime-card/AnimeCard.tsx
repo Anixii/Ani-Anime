@@ -8,7 +8,6 @@ type AnimeCardProps = {
   item: PopularAndTrendingResult;
 };
 const AnimeCard: React.FC<AnimeCardProps> = ({ item }) => { 
-    // console.log(item);
     
   return (
     <> 
