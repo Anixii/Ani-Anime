@@ -14,7 +14,7 @@ export default async function Home() {
           <article className="w-full ">
             <div className="flex justify-between items-center mb-5 ">
               <h3 className="text-2xl  font-bold">Top Hit Anime</h3>{" "}
-              <Link href={"/"}>
+              <Link href={`/catalog?sort=["TRENDING_DESC"]`}>
                 <Button
                   variant={"secondary"}
                   className="font-medium text-[rgb(6,193,73)]"
@@ -31,7 +31,7 @@ export default async function Home() {
           <article className="w-full ">
             <div className="flex justify-between items-center mb-5 ">
               <h3 className="text-2xl  font-bold">Most Popular Anime</h3>{" "}
-              <Link href={"/"}>
+              <Link href={`/catalog?sort=["POPULARITY_DESC"]`}>
                 <Button
                   variant={"secondary"}
                   className="font-medium text-[rgb(6,193,73)]"
@@ -50,7 +50,7 @@ export default async function Home() {
           <article className="w-full ">
             <div className="flex justify-between items-center mb-5 ">
               <h3 className="text-2xl  font-bold">Most Scored Anime</h3>{" "}
-              <Link href={"/"}>
+              <Link href={`/catalog?sort=["SCORE_DESC"]`}>
                 <Button
                   variant={"secondary"}
                   className="font-medium text-[rgb(6,193,73)]"
@@ -67,7 +67,7 @@ export default async function Home() {
           <article className="w-full ">
             <div className="flex justify-between items-center mb-5 ">
               <h3 className="text-2xl  font-bold">Most Liked Anime</h3>{" "}
-              <Link href={"/"}>
+              <Link href={`/catalog?sort=["FAVOURITES_DESC"]`}>
                 <Button
                   variant={"secondary"}
                   className="font-medium text-[rgb(6,193,73)]"
@@ -86,7 +86,7 @@ export default async function Home() {
           <article className="w-full ">
             <div className="flex justify-between items-center mb-5 ">
               <h3 className="text-2xl  font-bold">Coming Soon Anime...</h3>{" "}
-              <Link href={"/"}>
+              <Link href={`/catalog?sort=["POPULARITY_DESC"]&status=NOT_YET_RELEASED`}>
                 <Button
                   variant={"secondary"}
                   className="font-medium text-[rgb(6,193,73)]"
@@ -97,7 +97,7 @@ export default async function Home() {
             </div>
             <Suspense fallback={<CardListSkeleton/>}>
               <CardWrapper 
-              reales={true}
+                reales={true}
                 params={{
                   sort: ["POPULARITY_DESC"],
                   status: "NOT_YET_RELEASED",
@@ -112,7 +112,7 @@ export default async function Home() {
           <article className="w-full ">
             <div className="flex justify-between items-center mb-5 ">
               <h3 className="text-2xl  font-bold">Top Hit Manga</h3>{" "}
-              <Link href={"/"}>
+              <Link href={`/catalog?sort=["TRENDING_DESC"]&type=MANGA`}>
                 <Button
                   variant={"secondary"}
                   className="font-medium text-[rgb(6,193,73)]"
@@ -131,7 +131,7 @@ export default async function Home() {
           <article className="w-full ">
             <div className="flex justify-between items-center mb-5 ">
               <h3 className="text-2xl  font-bold">Most Popular Manga</h3>{" "}
-              <Link href={"/"}>
+              <Link href={`/catalog?sort=["POPULARITY_DESC"]&type=MANGA`}>
                 <Button
                   variant={"secondary"}
                   className="font-medium text-[rgb(6,193,73)]"
@@ -154,7 +154,7 @@ export default async function Home() {
           <article className="w-full ">
             <div className="flex justify-between items-center mb-5 ">
               <h3 className="text-2xl  font-bold">Most Scored Manga</h3>{" "}
-              <Link href={"/"}>
+              <Link href={`/catalog?sort=["SCORE_DESC"]&type=MANGA`}>
                 <Button
                   variant={"secondary"}
                   className="font-medium text-[rgb(6,193,73)]"
@@ -173,7 +173,7 @@ export default async function Home() {
           <article className="w-full ">
             <div className="flex justify-between items-center mb-5 ">
               <h3 className="text-2xl  font-bold">Most Liked Manga</h3>{" "}
-              <Link href={"/"}>
+              <Link href={`/catalog?sort=["FAVOURITES_DESC"]&type=MANGA`}>
                 <Button
                   variant={"secondary"}
                   className="font-medium text-[rgb(6,193,73)]"
@@ -196,7 +196,7 @@ export default async function Home() {
           <article className="w-full ">
             <div className="flex justify-between items-center mb-5 ">
               <h3 className="text-2xl  font-bold">Coming Soon Manga...</h3>{" "}
-              <Link href={"/"}>
+              <Link href={`/catalog?sort=["POPULARITY_DESC"]&type=MANGA&status=NOT_YET_RELEASED`}>
                 <Button
                   variant={"secondary"}
                   className="font-medium text-[rgb(6,193,73)]"

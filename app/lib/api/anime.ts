@@ -57,7 +57,6 @@ export const animeApi = {
             
             throw Error
         }    
-        await new Promise((resolve) => setTimeout(resolve, 3000));
         return await anime.json()
     },
 
