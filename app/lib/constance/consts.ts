@@ -12,7 +12,7 @@ export const headerNav = [
     },
     {
       display: "Realese",
-      path: "/reaslese",
+      path: "/release",
       icon: CalendarDaysIcon
     },  
   ]; 
@@ -50,7 +50,7 @@ export const CatalogSeasons = [
   {name:'Summer', value: 'SUMMER'},
   {name:'Fall', value: 'FALL'},
   {name:'Winter', value: 'WINTER'},
-  {name:'Spring', value: 'Spring'},
+  // {name:'Spring', value: 'SPRING'},
 ]
 export const CatalogStatus = [ 
   {name:'Relesing', value: 'RELEASING'},

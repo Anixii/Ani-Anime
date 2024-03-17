@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="icon" href="./assets/Mugiwara Logo Vector.svg" sizes="any" />
+      <link rel="icon" href="https://vectorseek.com/wp-content/uploads/2023/07/Mugiwara-Logo-Vector.jpg" sizes="any" />
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"

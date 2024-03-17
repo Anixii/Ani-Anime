@@ -18,7 +18,6 @@ const CatalogSidebar = () => {
 
   const setFilter = (e: any) => {
     const data = e.map((item:any) => item.value) 
-    console.log(data);
     params.set('genres',JSON.stringify(data));
     replace(`${pathname}?${decodeURIComponent(params.toString())}`,{scroll:false})
   };

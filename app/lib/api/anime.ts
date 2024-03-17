@@ -33,6 +33,13 @@ export const animeApi = {
             throw Error
         }   
         return await anime.json()
+    }, 
+    async getRandomAnime(){ 
+        const anime = await fetch(`https://march-api1.vercel.app/meta/anilist/random-anime`, {cache:'no-cache'},) 
+        if(!anime.ok){ 
+            throw Error
+        }   
+        return await anime.json()
     },
     async getAdvancedSearchAnime(params?:AdvancedSearchParams) { 
         let queryStringParams = '';
@@ -52,9 +59,9 @@ export const animeApi = {
         console.log(params);
         
         const anime = await fetch(`https://march-api1.vercel.app/meta/anilist/advanced-search${queryStringParams}`, {next:{revalidate: 82000}},) 
+        
         if(!anime.ok){ 
-            console.log("error");
-            
+            console.log(await anime.json());            
             throw Error
         }    
         return await anime.json()

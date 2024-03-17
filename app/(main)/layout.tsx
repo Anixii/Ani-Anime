@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
    <>  
     <Header/> 
-    <div className="mb-20">
+    <div className="mb-20 py-36 px-4 xl:px-20 2xl:px-28">
     {children}
     </div>
    </>

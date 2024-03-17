@@ -18,19 +18,23 @@ export default function RootLayout({
 }>) {
   return (
    <>  
-    <main className="py-36 px-4 xl:px-20 2xl:px-28">
+    <main>
       <h1 className="text-4xl mb-4 font-bold">Catalog</h1>
       <div className="flex justify-between gap-x-2 items-start">
         <div className="w-full md:w-[70%] xl:w-[75%]">
-          <div className="mb-6">
+          <div className="mb-6"> 
+          <Suspense fallback={'Load...'}> 
             <SearchGrid />
+          </Suspense>
           </div>   
           <Suspense fallback={<CatalogLoading/>}> 
             {children}
           </Suspense>
         </div>
-        <div className="hidden md:block md:w-[30%] xl:w-[25%]">
+        <div className="hidden md:block md:w-[30%] xl:w-[25%]"> 
+        <Suspense fallback={<h1>Load....</h1>}> 
           <CatalogSidebar />
+        </Suspense>
         </div>
       </div>
     </main>
