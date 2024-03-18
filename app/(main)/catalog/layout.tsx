@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
    <>  
-    <main>
+    <main className=" py-36 px-4 xl:px-20 2xl:px-28">
       <h1 className="text-4xl mb-4 font-bold">Catalog</h1>
       <div className="flex justify-between gap-x-2 items-start">
         <div className="w-full md:w-[70%] xl:w-[75%]">

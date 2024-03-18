@@ -1,7 +1,5 @@
 import { PopularAndTrendingResult } from "@/app/lib/types/animelist";
-import Image from "next/image";
-import Link from "next/link";
-import React, { Suspense } from "react";
+import React from "react";
 import GridCard from "./GridCard";
 import SearchNotFound from "../not-found/SearchNotFoun";
 type GridWrapperPropsType = {

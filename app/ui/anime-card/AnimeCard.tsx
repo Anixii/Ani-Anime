@@ -8,11 +8,12 @@ type AnimeCardProps = {
   item: PopularAndTrendingResult;
 };
 const AnimeCard: React.FC<AnimeCardProps> = ({ item }) => { 
+    console.log(item.id);
     
   return (
     <> 
     <CarouselItem className="basis-1/2 sm:basis-1/3 md:basis-[25%] lg:basis-[20%] xl:basis-1/6 min-[1680px]:basis-[13%]">
-      <Link className="relative rounded-xl overflow-hidden " href={"/"}>
+      <Link className="relative rounded-xl overflow-hidden " href={`/catalog/${item.id}`}>
         <Image
           className="rounded-xl  w-full h-full brightness-75 "
           src={item.image}
@@ -28,7 +29,7 @@ const AnimeCard: React.FC<AnimeCardProps> = ({ item }) => {
         </div>
         <div className="absolute bottom-0 p-2 rounded-xl to-transparent from-black bg-gradient-to-t  text-white">
           <h5 className="text-[15px] font-semibold line-clamp-1">
-            {item.title.userPreferred}
+            {item.title.userPreferred} 
           </h5>
           <h5 className="text-[15px] font-normal line-clamp-1">
             {item.description}

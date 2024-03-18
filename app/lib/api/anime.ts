@@ -56,7 +56,6 @@ export const animeApi = {
             const formattedRestParams = queryString.stringify(restParams, { arrayFormat: 'comma' });
             queryStringParams = '?' + [formattedSort,formattedGenres,formattedRestParams].filter(Boolean).join('&');
         }; 
-        console.log(params);
         
         const anime = await fetch(`https://march-api1.vercel.app/meta/anilist/advanced-search${queryStringParams}`, {next:{revalidate: 82000}},) 
         
