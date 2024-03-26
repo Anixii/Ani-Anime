@@ -37,7 +37,6 @@ const CatalogPage = async ({
   });
   return (
     <> 
-
       <GridWrapper data={data.results} />
     </>
   );

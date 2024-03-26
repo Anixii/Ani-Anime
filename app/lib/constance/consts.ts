@@ -1,4 +1,4 @@
-import { HomeIcon,CalendarDaysIcon,LibraryBigIcon } from "lucide-react";
+import { HomeIcon,LibraryBigIcon } from "lucide-react";
 export const headerNav = [
     {
       display: "Home",
@@ -9,12 +9,7 @@ export const headerNav = [
       display: "Catalog",
       path: "/catalog",
       icon: LibraryBigIcon,
-    },
-    {
-      display: "Realese",
-      path: "/release",
-      icon: CalendarDaysIcon
-    },  
+    }, 
   ]; 
 
 export const CatalogGenreSelect =  [

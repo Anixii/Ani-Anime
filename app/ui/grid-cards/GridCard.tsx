@@ -1,13 +1,12 @@
 import { PopularAndTrendingResult } from "@/app/lib/types/animelist";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 type GridWrapperPropsType = {
   anime: PopularAndTrendingResult;
 };
 const GridCard: React.FC<GridWrapperPropsType> = ({ anime }) => {
   return (
-    <Link className="relative rounded-xl overflow-hidden " href={"/"}>
+    <div className="relative rounded-xl overflow-hidden " >
       <Image
         className="rounded-xl  w-full h-full brightness-90 "
         src={anime.image}
@@ -29,7 +28,7 @@ const GridCard: React.FC<GridWrapperPropsType> = ({ anime }) => {
           {anime.description}
         </h5>
       </div>
-    </Link>
+    </div>
   );
 };
 

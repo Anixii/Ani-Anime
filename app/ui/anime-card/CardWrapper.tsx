@@ -10,7 +10,6 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 type CardWrapperType = {
   params?: AdvancedSearchParams;
@@ -53,7 +52,7 @@ const AnimeCard: React.FC<AnimeCardProps> = ({ item }) => {
   return (
     <>
       <CarouselItem className="basis-1/2 sm:basis-1/3 md:basis-[25%] lg:basis-[20%] xl:basis-1/6 min-[1680px]:basis-[13%]">
-        <Link className="relative rounded-xl overflow-hidden " href={`/watch/${item.id}`}>
+        <div className="relative rounded-xl overflow-hidden ">
           <Image
             className="rounded-xl  w-full h-full brightness-75 "
             src={item.image}
@@ -75,7 +74,7 @@ const AnimeCard: React.FC<AnimeCardProps> = ({ item }) => {
               {item.description}
             </div>
           </div>
-        </Link>
+        </div>
       </CarouselItem>
     </>
   );
@@ -84,9 +83,8 @@ const AnimeCardNotRealesed: React.FC<AnimeCardProps> = ({ item }) => {
   return (
     <>
       <CarouselItem className="basis-[75%] overflow-hidden rounded-xl h-[200px] ">
-        <Link
+        <div
           className="relative rounded-xl h-full overflow-hidden "
-          href={"/"}
         >
           <div className="h-full overflow-hidden  rounded-xl brightness-95 ">
             <div
@@ -117,7 +115,7 @@ const AnimeCardNotRealesed: React.FC<AnimeCardProps> = ({ item }) => {
               />
             )}
           </div>
-        </Link>
+        </div>
       </CarouselItem>
     </>
   );

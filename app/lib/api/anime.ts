@@ -40,6 +40,11 @@ export const animeApi = {
             throw Error
         }   
         return await anime.json()
+    }, 
+    async getAnimeInfo(id:string | number| undefined){ 
+        const anime = await fetch(`https://march-api1.vercel.app/meta/anilist/info/${id}`,)  
+        
+        return await anime.json()
     },
     async getAdvancedSearchAnime(params?:AdvancedSearchParams) { 
         let queryStringParams = '';

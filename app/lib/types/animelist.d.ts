@@ -33,7 +33,7 @@ export type PopularAndTrendingResult = {
         }
 }
  
-export type RandomAnime= {
+export type Anime= {
     id: string,
     malId:number
     title: {
@@ -70,7 +70,7 @@ export type RandomAnime= {
     relations: Array<RelationsType>
     recommendations:Array<RecommendationsType>
 
-    synomus:any, 
+    synomus:Array<string>, 
     startDate: { 
         year:number, 
         month: number, 
