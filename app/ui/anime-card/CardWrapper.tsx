@@ -52,7 +52,7 @@ const AnimeCard: React.FC<AnimeCardProps> = ({ item }) => {
   return (
     <>
       <CarouselItem className="basis-1/2 sm:basis-1/3 md:basis-[25%] lg:basis-[20%] xl:basis-1/6 min-[1680px]:basis-[13%]">
-        <div className="relative rounded-xl overflow-hidden ">
+        <div className="relative rounded-xl overflow-hidden h-full">
           <Image
             className="rounded-xl  w-full h-full brightness-75 "
             src={item.image}
@@ -88,7 +88,7 @@ const AnimeCardNotRealesed: React.FC<AnimeCardProps> = ({ item }) => {
         >
           <div className="h-full overflow-hidden  rounded-xl brightness-95 ">
             <div
-              className={`w-[100%] rounded-xl image__bg brightness-75 ${
+              className={`w-[100%] h-full rounded-xl image__bg brightness-75 ${
                 item.cover || "blur-sm"
               }`}
               style={{ backgroundImage: `url(${item.cover || item.image})` }}
