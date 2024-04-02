@@ -19,7 +19,7 @@ const Header = () => {
         </div>
       </div>
     </header>
-    <ul className='flex text-white bottom-0 w-full z-50 backdrop-blur-lg backdrop-brightness-50 shadow-xl fixed left-0 h-20  items-center justify-between m-0 box-border px-7 list-none sm:hidden '>
+    <ul className='flex text-white bottom-0 w-full z-50 backdrop-blur-lg backdrop-brightness-50 shadow-xl fixed left-0 h-20  items-center justify-around m-0 box-border px-7 list-none sm:hidden '>
           <HeaderLinks/>
     </ul> 
     </>
